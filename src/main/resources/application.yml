@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+orders:
+  db:
+    url: ${ORDERS_DB_URL:jdbc:postgresql://orders-postgres:5432/orders}
+    user: ${ORDERS_DB_USER:orders}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    com.zaxxer.hikari: WARN
