@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Profile;
 @Configuration
 @Profile("!test")
 public class DatabaseConfig {
-    private static final String DB_PASSWORD = System.getenv("DB_PASSWORD");
+    private static final String DB_PASSWORD = "orders-demo-2026";
 
     @Bean
     public DataSource dataSource(@Value("${orders.db.url}") String url, @Value("${orders.db.user}") String user) {
